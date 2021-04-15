@@ -4,6 +4,7 @@
     <f:view>
         <head>
             <title>Login screen</title>
+            <link rel="stylesheet" type="text/css" href="styles.css" />
         </head>
         <body>
             <h1>Login screen</h1>
@@ -11,15 +12,15 @@
             <h:form>
             
                 Login: 
-                <h:inputText id="login" />
+                <h:inputText id="login" value="#{loginBean.login}" />
                 <br/>
                 
                 Password:
-                <h:inputText id="password"/>
+                <h:inputText id="password" value="#{loginBean.password}" />
                 <br/>
             
                 
-                <h:commandButton value="Connect" />
+                <h:commandButton action="#{loginBean.returnAction}" value="Connect" />
                 
            </h:form>
         </body>
