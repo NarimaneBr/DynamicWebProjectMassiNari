@@ -13,7 +13,7 @@ public class User {
 	 * 
 	 * Primary key.
 	 */
-	private int id;
+	private int id; 
 	
 	/**
 	 * The user's firstname.
