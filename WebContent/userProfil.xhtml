@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+ <h:head>
+        <title>Profil</title>
+    </h:head>
+    <h:body>
+    	<h1>Profil</h1>
+    	<h:form>
+		<h4>Post</h4>	
+		<br/>
+		Title : <h:inputTextarea type="text" value="#{Post.title}" required="true"/>
+		<br/><br/>	
+		Text : <h:inputTextarea type="text" value="#{Post.text}" required="true"/>
+		<br/><br/>
+    	   <h:commandButton value="Add post" action="#{UserProfil.add(Post)}" />
+    	</h:form>
+    </h:body>
+</html>

@@ -5,6 +5,7 @@
         <title>Login</title>
     </h:head>
     <h:body>
+    <h1>Se connecter</h1>
     	<h:form>
     	   Username
     	   		<h:inputText id="username" value="#{Login.username}" />
@@ -12,7 +13,7 @@
     	   Password:    	   
                 <h:inputText id="password" value="#{Login.password}" />
                 <br/>
-    	   <h:commandButton value="Connect" action="#{Login.connecter(User)}" />
+    	   <h:commandButton value="Connect" action="#{Login.loginUser(User)}" />
     	</h:form>
     </h:body>
 </html>

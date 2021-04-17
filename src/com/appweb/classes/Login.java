@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 import javax.enterprise.context.RequestScoped;
+import javax.faces.context.FacesContext;
 import javax.inject.Named;
 
 import com.appweb.beans.User;
@@ -24,6 +25,7 @@ public class Login implements Serializable {
 	private final String PASSWORD = "password";
 	
 	private String username,password;
+	private int id;
 	
 	public String getUsername() {return username;}
 	public String getPassword() {return password;}
@@ -31,14 +33,17 @@ public class Login implements Serializable {
 	public void setUsername(String username) {this.username = username;}
 	public void setPassword(String password) {this.password = password;}
 	
-	public String connecter(User user) {
+	public String loginUser(User user) {
 		Connection connexion = DBConnection.getInstance();
         try {
-            PreparedStatement preparedStatement = connexion.prepareStatement("SELECT username,password FROM USER where "+USERNAME+" = ? AND "+PASSWORD+" = ? ;");
-            preparedStatement.setString(1, user.getName());
-            preparedStatement.setString(2, user.getFirstname());
+            PreparedStatement preparedStatement = connexion.prepareStatement("SELECT * FROM USER where "+USERNAME+" = ? AND "+PASSWORD+" = ? ;");
+            preparedStatement.setString(1, user.getUsername());
+            preparedStatement.setString(2, user.getPassword());
             preparedStatement.execute();
 
+            FacesContext.getCurrentInstance().getExternalContext()
+            .getSessionMap().put("idUser", id);
+            
             preparedStatement.close();
             connexion.close();
             return "success";
@@ -48,5 +53,6 @@ public class Login implements Serializable {
         }
         return "error";
     }
+	
 	
 }

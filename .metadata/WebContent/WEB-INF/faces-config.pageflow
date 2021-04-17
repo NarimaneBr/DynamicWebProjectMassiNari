@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf16184463167000" configfile="/AppWebMassiNari2021/WebContent/WEB-INF/faces-config.xml">
-  <nodes xsi:type="pageflow:PFPage" name="login.xhtml" x="122" y="370" id="pf16184998289900" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf16186231767640 pf16186231767641" path="/sign.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="login.xhtml" x="122" y="370" id="pf16184998289900" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf16186231767641 pf16186872812310" path="/sign.xhtml"/>
   <nodes xsi:type="pageflow:PFPage" name="viewArticle.xhtml" x="122" y="754" id="pf16184998289912" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" path="/viewArticle.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="unknown.xhtml" id="pf16186231767642" referenceLink="//@navigationRule.1/@navigationCase.1/@toViewId|" inlinks="pf16186231767640 pf16186280746120" path="/unknown.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="login.xhtml" id="pf16186231767643" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf16186280746120 pf16186280914853" inlinks="pf16186231767641" path="/login.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="userProfil.xhtml" id="pf16186280914854" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" inlinks="pf16186280914853" path="/userProfil.xhtml"/>
-  <links id="pf16186231767640" target="pf16186231767642" source="pf16184998289900" outcome="error" redirect="true"/>
+  <nodes xsi:type="pageflow:PFPage" name="login.xhtml" id="pf16186231767643" referenceLink="//@navigationRule.2/@fromViewId|" outlinks="pf16186280914853 pf16186919326292" inlinks="pf16186231767641" path="/login.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="userProfil.xhtml" id="pf16186280914854" referenceLink="//@navigationRule.2/@fromViewId|" outlinks="pf16186919326293 pf16186919326294" inlinks="pf16186280914853" path="/userProfil.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="error.xhtml" id="pf16186872812311" referenceLink="//@navigationRule.2/@navigationCase.1/@toViewId|" inlinks="pf16186872812310 pf16186919326292 pf16186919326293" path="/error.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="done.xhtml" id="pf16186919326295" referenceLink="//@navigationRule.2/@navigationCase.0/@toViewId|" inlinks="pf16186919326294" path="/done.xhtml"/>
   <links id="pf16186231767641" target="pf16186231767643" source="pf16184998289900" outcome="success" redirect="true"/>
-  <links id="pf16186280746120" target="pf16186231767642" source="pf16186231767643" outcome="error" redirect="true"/>
   <links id="pf16186280914853" target="pf16186280914854" source="pf16186231767643" outcome="success" redirect="true"/>
+  <links id="pf16186872812310" target="pf16186872812311" source="pf16184998289900" outcome="error" redirect="true"/>
+  <links id="pf16186919326292" target="pf16186872812311" source="pf16186231767643" outcome="error" redirect="true"/>
+  <links id="pf16186919326293" target="pf16186872812311" source="pf16186280914854" outcome="error" redirect="true"/>
+  <links id="pf16186919326294" target="pf16186919326295" source="pf16186280914854" outcome="success" redirect="true"/>
 </pageflow:Pageflow>

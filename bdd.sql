@@ -17,9 +17,24 @@ CREATE TABLE user (
   `password` varchar(20) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+DROP TABLE IF EXISTS `post`;
+CREATE TABLE post (
+  `id` int NOT NULL,
+  `title` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `text` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `id_user` int,
+  foreign key (id_user) references user (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
 --
 -- Dumping data for table `user`
 --
+select * from user;
+
+select * from post;
+
+INSERT INTO post(id, title, text, id_user) VALUES 
+(1,'titre','hhahahahahaa',1);
 
 LOCK TABLES `user` WRITE;
 
@@ -48,3 +63,16 @@ ALTER TABLE `user`
 ALTER TABLE `user`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
+
+-- Index pour la table `post`
+--
+ALTER TABLE `post`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT pour la table `post`
+--
+ALTER TABLE `post`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+COMMIT;
+

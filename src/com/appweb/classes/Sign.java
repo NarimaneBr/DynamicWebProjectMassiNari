@@ -8,15 +8,16 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
 
 import com.appweb.beans.User;
+import com.appweb.dao.DAO;
 import com.appweb.db.DBConnection;
 
 @Named("Sign")
 @RequestScoped
 
-public class Sign implements com.appweb.dao.DAO<User>{
+public class Sign implements DAO<User>{
 
 		@Override
-		public String inscrire(User user) {
+		public String add(User user) {
 			Connection connexion = DBConnection.getInstance();
 			 try {
 		        	PreparedStatement preparedStatement = connexion.prepareStatement("INSERT INTO user(id, username, name, firstname, password) VALUES(?,?,?,?,?);");

@@ -6,6 +6,7 @@
 </h:head>
 
  <h:body>
+ 	<h1>S'inscrire</h1>
     	<h:form method="post" action="">
     	   Username
     	   		<h:inputText id="username" value="#{User.username}" />
@@ -19,7 +20,10 @@
     	   Password:
                 <h:inputText id="password" value="#{User.password}" />
                 <br/>
-    	   <h:commandButton value="Sign in" action="#{Sign.inscrire(User)}" />
+    	   <h:commandButton value="Sign in" action="#{Sign.add(User)}" />
     	</h:form>
+    	<br/>
+	<h:outputText>Vous avez déjà un compte ? </h:outputText>
+	<h:link value=" Se connecter" outcome="Login" action="Login"/>
     </h:body>
 </html>
