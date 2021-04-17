@@ -2,19 +2,24 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html">
 <h:head>
-	<meta charset="ISO-8859-1">
 	<title>Sign in</title>
 </h:head>
 
  <h:body>
-    	<h:form>
+    	<h:form method="post" action="">
     	   Username
-    	   		<h:inputText id="name" value="#{login.name}" />
+    	   		<h:inputText id="username" value="#{User.username}" />
+    	   		<br/>
+    	   	Name
+    	   		<h:inputText id="name" value="#{User.name}" />
+    	   		<br/>
+    	   	Firstname
+    	   		<h:inputText id="firstname" value="#{User.firstname}" />
     	   		<br/>
     	   Password:
-                <h:inputText id="password" value="#{login.password}" />
+                <h:inputText id="password" value="#{User.password}" />
                 <br/>
-    	   <h:commandButton value="Sign in" action="#{login.dispatch()}" />
+    	   <h:commandButton value="Sign in" action="#{Sign.inscrire(User)}" />
     	</h:form>
     </h:body>
 </html>

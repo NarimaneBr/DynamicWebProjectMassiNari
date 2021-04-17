@@ -7,12 +7,12 @@
     <h:body>
     	<h:form>
     	   Username
-    	   		<h:inputText id="name" value="#{login.name}" />
+    	   		<h:inputText id="username" value="#{Login.username}" />
     	   		<br/>
-    	   Password:
-                <h:inputText id="password" value="#{login.password}" />
+    	   Password:    	   
+                <h:inputText id="password" value="#{Login.password}" />
                 <br/>
-    	   <h:commandButton value="Connect" action="#{login.dispatch()}" />
+    	   <h:commandButton value="Connect" action="#{Login.signInUser(username, password)}" />
     	</h:form>
     </h:body>
 </html>

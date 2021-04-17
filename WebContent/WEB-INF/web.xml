@@ -14,6 +14,11 @@
 		<param-value>Development</param-value>
 	</context-param>
 	
+   <context-param>
+    <param-name>javax.faces.INTERPRET_EMPTY_STRING_SUBMITTED_VALUES_AS_NULL</param-name>
+    <param-value>true</param-value>
+   </context-param>
+
   <servlet>
 	<servlet-name>FacesServlet</servlet-name>
 	<servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
@@ -24,6 +29,8 @@
   	<servlet-name>FacesServlet</servlet-name>
   	<url-pattern>*.xhtml</url-pattern>
   </servlet-mapping>
+  
+  
   
 
 </web-app>

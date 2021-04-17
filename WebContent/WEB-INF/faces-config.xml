@@ -6,14 +6,14 @@
     version="2.3">
     
     <navigation-rule>
-		<from-view-id>/login.xhtml</from-view-id>
+		<from-view-id>/sign.xhtml</from-view-id>
 		<navigation-case>
-			<from-outcome>welcome</from-outcome>
-			<to-view-id>/welcome.xhtml</to-view-id>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/login.xhtml</to-view-id>
 			<redirect />
 		</navigation-case>
 		<navigation-case>
-			<from-outcome>unknown</from-outcome>
+			<from-outcome>error</from-outcome>
 			<to-view-id>/unknown.xhtml</to-view-id>
 			<redirect />
 		</navigation-case>

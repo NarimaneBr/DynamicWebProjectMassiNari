@@ -1,11 +1,52 @@
-package projet.appWeb;
+package com.appweb.beans;
 
+import javax.enterprise.context.RequestScoped;
+import javax.inject.Named;
+
+@Named ("User")
+@RequestScoped
 public class User {
 	
-	 private String username,name, firstname, password;
+
+	/**
+	 * The user's identifier.
+	 * 
+	 * Primary key.
+	 */
+	private int id;
+	
+	/**
+	 * The user's firstname.
+	 */
+	private String firstname;
+	
+	/**
+	 * The user's lastname.
+	 */
+	private String name;
+	
+	/**
+	 * The user's username.
+	 */
+	private String username;
+	
+	/**
+	 * The user's password.
+	 */
+	private String password;
 	    
 	    
-	    public String getPassword() {
+	    public int getId() {
+		return id;
+	}
+
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+
+		public String getPassword() {
 			return password;
 		}
 
@@ -43,5 +84,7 @@ public class User {
 	    public void setName(String name) {
 	        this.name = name;
 	    }
+	    
+	   
 
 }
