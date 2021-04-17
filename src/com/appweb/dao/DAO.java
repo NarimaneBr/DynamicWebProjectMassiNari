@@ -1,7 +1,8 @@
 package com.appweb.dao;
 
-public interface DAO<X> {
+
+public interface DAO<T> {
 	
-	String inscrire(X x);
+	String inscrire(T t);
 
 }
